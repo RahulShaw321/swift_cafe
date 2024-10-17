@@ -14,7 +14,7 @@ class CustomSearchBar extends StatelessWidget {
       child: Row(
         children: [
           IconButton(
-            icon: Icon(Icons.search, color: Colors.grey), // Search icon
+            icon: const Icon(Icons.search, color: Colors.grey), // Search icon
             onPressed: () {
               // Add search action here
             },
@@ -27,12 +27,12 @@ class CustomSearchBar extends StatelessWidget {
                     color: Colors.black.withOpacity(0.3), fontSize: 15),
                 border: InputBorder.none, // No border on TextField
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 10), // Vertical padding
+                    const EdgeInsets.symmetric(vertical: 10), // Vertical padding
               ),
             ),
           ),
           IconButton(
-            icon: Icon(Icons.filter_list_outlined,
+            icon: const Icon(Icons.filter_list_outlined,
                 color: Colors.grey), // Filter icon
             onPressed: () {
               // Add filter action here

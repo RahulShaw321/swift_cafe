@@ -8,7 +8,7 @@ class LoginButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: deviceHeight * 0.3,
-      height: deviceHeight * 0.05,
+      height: deviceHeight * 0.06,
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           colors: [
@@ -33,7 +33,7 @@ class LoginButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           foregroundColor: Colors.white,
           backgroundColor: Colors.transparent, // Text color
-          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(deviceHeight * 0.2),
           ),
@@ -41,7 +41,7 @@ class LoginButton extends StatelessWidget {
         onPressed: () {
           print('Login button pressed');
         },
-        child: Text('Login'),
+        child: const Text('Login'),
       ),
     );
   }
