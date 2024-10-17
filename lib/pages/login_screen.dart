@@ -107,16 +107,16 @@ class LoginScreen extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(top: deviceHeight * 0.033),
                         child: GestureDetector(
-                            child: Text(
-                          "Privacy Policy",
-                          style: GoogleFonts.getFont("Inter",
-                              fontSize: deviceHeight * 0.02,
-                              color: Colors.white),
-                          textAlign: TextAlign.center,
-                        ),
-                        onTap: (){
-                          print("Privacy Policy Opened");
-                        },
+                          child: Text(
+                            "Privacy Policy",
+                            style: GoogleFonts.getFont("Inter",
+                                fontSize: deviceHeight * 0.02,
+                                color: Colors.white),
+                            textAlign: TextAlign.center,
+                          ),
+                          onTap: () {
+                            print("Privacy Policy Opened");
+                          },
                         ),
                       )
                     ],
