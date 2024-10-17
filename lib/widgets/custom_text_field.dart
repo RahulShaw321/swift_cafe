@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextField extends StatelessWidget {
-  final String label  ;
-  
+  final String label;
+
   const CustomTextField({super.key, required this.label});
 
   @override
@@ -13,12 +13,10 @@ class CustomTextField extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
             border: InputBorder.none,
-            labelText:label,
-            labelStyle: GoogleFonts.getFont(
-              "Inter",
-              color: Colors.white,
-            ),
-            enabledBorder: UnderlineInputBorder(
+            labelText: label,
+            labelStyle: GoogleFonts.getFont("Inter",
+                color: Colors.white, fontSize: 12, fontWeight: FontWeight.w200),
+            enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: Colors.grey),
             )),
       ),

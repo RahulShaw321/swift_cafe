@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swift_cafe_app/widgets/custom_text_field.dart';
 import 'package:swift_cafe_app/widgets/login_button.dart';
+import 'package:swift_cafe_app/widgets/signup_button.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -94,6 +95,11 @@ class LoginScreen extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(top: deviceHeight * 0.04),
                         child: LoginButton(
+                          deviceHeight: deviceHeight,
+                        ),
+                      ),Padding(
+                        padding: EdgeInsets.only(top: deviceHeight * 0.04),
+                        child: SignupButton(
                           deviceHeight: deviceHeight,
                         ),
                       )

@@ -24,7 +24,7 @@ class LoginButton extends StatelessWidget {
           BoxShadow(
             color: Colors.black.withOpacity(0.5),
             spreadRadius: 1,
-            blurRadius: 8,
+            blurRadius: 4,
             offset: const Offset(0, 2), // Position of the shadow
           ),
         ],
@@ -35,7 +35,7 @@ class LoginButton extends StatelessWidget {
           backgroundColor: Colors.transparent, // Text color
           padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(deviceHeight * 0.2),
           ),
         ),
         onPressed: () {
