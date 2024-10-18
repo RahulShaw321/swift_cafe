@@ -1,7 +1,9 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swift_cafe_app/widgets/custom_text_field.dart';
+import 'package:swift_cafe_app/widgets/glassmorphism.dart';
 import 'package:swift_cafe_app/widgets/login_button.dart';
 import 'package:swift_cafe_app/widgets/noisy_background.dart';
 import 'package:swift_cafe_app/widgets/signup_button.dart';
@@ -48,39 +50,23 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Glassmorphism container
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(deviceHeight * 0.02),
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-                    child: NoisyBackground(
-                      deviceHeight: deviceHeight,
-                      ForegroundWidget: Container(
-                        height: deviceHeight * 0.87,
-                        width: deviceWidth * 0.85,
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.circular(deviceHeight * 0.02),
-                          color: Colors.white.withOpacity(0.08),
-                          border: Border.all(
-                            color: Colors.white.withOpacity(0.4),
-                            width: 1,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.1),
-                              blurRadius: 24,
-                              offset: const Offset(4, 4),
-                            ),
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.2),
-                              blurRadius: 24,
-                              spreadRadius: -1,
-                              offset: const Offset(-4, -4),
-                            ),
-                          ],
-                        ),
-                        child: Padding(
+
+                 SizedBox(
+                    height: deviceHeight * 0.87,
+                    width: deviceWidth * 0.85,
+                    child: Card(
+                      elevation: 4,
+                      color: Colors.transparent,
+                      
+                      
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(color: Colors.white.withOpacity(0.2)),
+                        borderRadius: BorderRadius.circular(
+                            deviceHeight * 0.015), // Smooth, rounded corners
+                      ),
+                      child: Glassmorphism(
+                        deviceHeight: deviceHeight,
+                        widget: Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: deviceHeight * 0.03,
                             vertical: deviceHeight * 0.035,
@@ -125,18 +111,15 @@ class LoginScreen extends StatelessWidget {
                                             171, 171, 171, 0.95),
                                         shadows: [
                                           Shadow(
-                                            color:
-                                                Colors.white.withOpacity(0.6),
+                                            color: Colors.white.withOpacity(0.6),
                                             blurRadius: 20,
                                           ),
                                           Shadow(
-                                            color:
-                                                Colors.white.withOpacity(0.4),
+                                            color: Colors.white.withOpacity(0.4),
                                             blurRadius: 30,
                                           ),
                                           Shadow(
-                                            color:
-                                                Colors.white.withOpacity(0.2),
+                                            color: Colors.white.withOpacity(0.2),
                                             blurRadius: 40,
                                           ),
                                         ],
@@ -159,7 +142,7 @@ class LoginScreen extends StatelessWidget {
                               SignupButton(
                                 deviceHeight: deviceHeight,
                               ),
-
+                        
                               const SizedBox(height: 15),
                               // Privacy Policy Text
                               GestureDetector(
@@ -178,7 +161,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
+                
               ],
             ),
           ),

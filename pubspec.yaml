@@ -65,6 +65,10 @@ flutter:
     - assets/images/background_img.jpg
     - assets/images/noisy-background.jpg  
     - assets/images/noise.png
+    - assets/images/espresso.jpg
+    - assets/images/latte.png
+    - assets/images/americano.png
+    - assets/images/cappuccino.png
  
   
 
