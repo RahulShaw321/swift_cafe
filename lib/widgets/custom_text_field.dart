@@ -15,7 +15,7 @@ class CustomTextField extends StatelessWidget {
             border: InputBorder.none,
             labelText: label,
             labelStyle: GoogleFonts.getFont("Inter",
-                color: Colors.white, fontSize: 12, fontWeight: FontWeight.w200),
+                color: Colors.white, fontSize: 12,),
             enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: Colors.grey),
             )),

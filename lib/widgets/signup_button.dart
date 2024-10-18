@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SignupButton extends StatelessWidget {
   final deviceHeight;
@@ -6,30 +7,26 @@ class SignupButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: deviceHeight * 0.3,
-      height: deviceHeight * 0.06,
-      child: OutlinedButton(
-        style: OutlinedButton.styleFrom(
-          side: const BorderSide(color: Colors.white, width: 2), // White border
-          backgroundColor: Colors.transparent, // Transparent background
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30), // Rounded edges
-          ),
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12), // Padding for the button
-        ),
-        onPressed: () {
-          // Add your signup logic here
-          print('Signup button pressed');
-        },
-        child: const Text(
-          'Sign Up',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w300 // White text color
-          ),
-        ),
-      ),
-    );
+    return OutlinedButton(
+                              onPressed: () => print("Signup Pressed"),
+                              style: OutlinedButton.styleFrom(
+                                side: BorderSide(
+                                    color: Colors.white.withOpacity(0.6)),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 90,
+                                  vertical: 15,
+                                ),
+                              ),
+                              child: Text(
+                                "Signup",
+                                style: GoogleFonts.inter(
+                                  fontSize: deviceHeight * 0.022,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            );
   }
 }
