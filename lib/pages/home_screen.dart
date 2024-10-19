@@ -1,7 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swift_cafe_app/coffees_list.dart';
+import 'package:swift_cafe_app/main.dart';
 import 'package:swift_cafe_app/widgets/custom_search_bar.dart';
 import 'package:swift_cafe_app/widgets/grid_tile_card.dart';
 import 'package:swift_cafe_app/widgets/list_view_card.dart';
@@ -14,6 +16,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.of(context).size.height;
     final deviceWidth = MediaQuery.of(context).size.width;
+
+    final popBeveragesImg = [
+      'assets/images/cup.png',
+      'assets/images/cappuccino.png',
+      'assets/images/americano.png'
+    ];
 
     return Scaffold(
       backgroundColor: Colors.black,
@@ -105,16 +113,36 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   Row(
                                     children: [
-                                      IconButton(
-                                        icon: const Icon(
-                                          Icons.shopping_cart_outlined,
-                                          color: Colors.white,
+                                      SizedBox(
+                                        width: deviceWidth * 0.11,
+                                        height: deviceWidth * 0.11,
+                                        child: ElevatedButton(
+                                          onPressed: () {},
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.white70,
+                                            padding: const EdgeInsets.symmetric(
+                                              vertical: 4,
+                                            ),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      deviceHeight * 0.01),
+                                            ),
+                                          ),
+                                          child: Icon(
+                                            Icons.shopping_basket_outlined,
+                                            color: Colors.black,
+                                          ),
                                         ),
-                                        onPressed: () {},
                                       ),
-                                      const CircleAvatar(
-                                        radius: 20,
-                                        child: Icon(Icons.person),
+                                      SizedBox(
+                                        width: deviceWidth * 0.03,
+                                      ),
+                                      CircleAvatar(
+                                        radius: deviceWidth * 0.05,
+                                        backgroundColor: Colors.green,
+                                        foregroundImage: AssetImage(
+                                            'assets/images/user.jpg'),
                                       ),
                                     ],
                                   ),
@@ -178,7 +206,10 @@ class HomeScreen extends StatelessWidget {
                                       childAspectRatio: 1.1,
                                     ),
                                     itemBuilder: (context, index) {
-                                      return const GridTileCard();
+                                      return GridTileCard(
+                                        deviceHeight: deviceHeight,
+                                        imgDir: popBeveragesImg[index],
+                                      );
                                     },
                                   ),
                                 ),
@@ -211,6 +242,9 @@ class HomeScreen extends StatelessWidget {
                                     coffeeName: coffee['name'],
                                     description: coffee['details'],
                                     deviceHeight: deviceHeight,
+                                    onPressed:(){
+                                      context.go('/product');
+                                    }
                                   );
                                 }).toList(),
                               )
@@ -224,23 +258,83 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.favorite), label: 'Favorites'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.notifications), label: 'Notifications'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart), label: 'Cart'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          // Blurred Bottom Navigation Bar
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0), // Add margin from edges
+              child: ClipRRect(
+                borderRadius:
+                    BorderRadius.circular(deviceHeight * 0.02), // Rounded edges
+                child: BackdropFilter(
+                  filter:
+                      ImageFilter.blur(sigmaX: 10, sigmaY: 10), // Blur effect
+                  child: Container(
+                    height: 70,
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.5), // Transparent black
+                      borderRadius: BorderRadius.circular(deviceHeight * 0.02),
+                      border: Border.all(
+                        color: Colors.white.withOpacity(0.2),
+                        width: 1,
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        _buildNavItem(Icons.home_outlined, true),
+                        _buildNavItem(Icons.person_outline, false),
+                        _buildNavItem(Icons.wallet_outlined, false),
+                        _buildNavItem(Icons.shopping_basket_outlined, false),
+                        _buildNavItem(Icons.support_agent_outlined, false),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
+}
+
+Widget _buildNavItem(IconData icon, bool isSelected) {
+  return Column(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      !isSelected
+          ? Icon(
+              icon,
+              color: Colors.white,
+              size: 28,
+            )
+          : buildCircularAvatar(icon)
+    ],
+  );
+}
+
+Widget buildCircularAvatar(IconData icon) {
+  return Container(
+    decoration: BoxDecoration(
+      shape: BoxShape.circle,
+      border: Border.all(
+        color: Colors.white.withOpacity(0.5), // Circular border color
+        width: 0.4, // Border width
+      ),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.white.withOpacity(0.2), // Shadow color
+          blurRadius: 3, // Shadow blur effect
+          offset: Offset(0, 0), // Shadow position
+        ),
+      ],
+    ),
+    child: CircleAvatar(
+      child: Icon(icon, size: 28),
+      foregroundColor: Colors.white,
+      backgroundColor: Colors.black.withOpacity(0.5), // Transparent background
+    ),
+  );
 }

@@ -4,12 +4,12 @@ import 'package:swift_cafe_app/widgets/glassmorphism.dart';
 import 'package:swift_cafe_app/widgets/noisy_background.dart';
 
 class GridTileCard extends StatelessWidget {
-  const GridTileCard({super.key});
+  final imgDir;
+  final deviceHeight;
+  const GridTileCard({super.key, this.imgDir, this.deviceHeight});
 
   @override
   Widget build(BuildContext context) {
-    final deviceHeight = MediaQuery.of(context).size.height -
-        MediaQuery.of(context).padding.bottom;
     return Card(
         margin: EdgeInsets.symmetric(horizontal: deviceHeight * 0.006),
         elevation: 4, // Slight elevation for a raised effect
@@ -51,7 +51,6 @@ class GridTileCard extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    
                     children: [
                       // Image with Shadow
                       Container(
@@ -70,18 +69,16 @@ class GridTileCard extends StatelessWidget {
                           ],
                         ),
                         child: Image.asset(
-                          'assets/images/cappuccino.png',
-                          height: deviceHeight * 0.145, // Consistent size
-                          width: deviceHeight * 0.145,
-                          fit: BoxFit.cover, // Ensure image fills the space
+                          imgDir,
+                          height: deviceHeight * 0.165, // Consistent size
+                          width: deviceHeight * 0.165,
+                          fit: BoxFit.contain, // Ensure image fills the space
                         ),
                       ),
-                    
 
                       Padding(
                         padding: EdgeInsets.only(left: deviceHeight * 0.01),
                         child: Row(
-                          
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,7 +99,7 @@ class GridTileCard extends StatelessWidget {
                                     color: Colors.black,
                                   ),
                                 ),
-                        
+
                                 // Rating and Add Button Row
                                 Text(
                                   '4.9 ⭐ (458)',
@@ -114,13 +111,15 @@ class GridTileCard extends StatelessWidget {
                               ],
                             ),
                             IconButton(
-                              padding: EdgeInsets.only(top: deviceHeight * 0.04),
-                              icon:  Icon(Icons.add_box_rounded, size:deviceHeight * 0.04, ),
+                              padding:
+                                  EdgeInsets.only(top: deviceHeight * 0.04),
+                              icon: Icon(
+                                Icons.add_box_rounded,
+                                size: deviceHeight * 0.04,
+                              ),
                               color: Colors.green,
                               splashRadius: 5,
                               splashColor: Colors.white,
-                             
-                              
                               onPressed: () {},
                             ),
                           ],

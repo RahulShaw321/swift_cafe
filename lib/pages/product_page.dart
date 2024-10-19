@@ -43,7 +43,7 @@ class ProductPage extends StatelessWidget {
                     ),
                   ),
                   NoisyBackground(
-                    deviceHeight: deviceHeight ,
+                    deviceHeight: deviceHeight,
                     ForegroundWidget: Glassmorphism(
                       roundedEdges: deviceHeight * 0.02,
                       widget: Container(
@@ -57,16 +57,19 @@ class ProductPage extends StatelessWidget {
                             children: [
                               // Title and Rating Row
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         'Lattè',
                                         style: GoogleFonts.inter(
                                           fontSize: 24,
-                                          color: Colors.white,
+                                          color:
+                                              Color.fromRGBO(205, 205, 205, 1),
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
@@ -76,7 +79,8 @@ class ProductPage extends StatelessWidget {
                                             '4.9  ',
                                             style: GoogleFonts.inter(
                                               fontSize: 16,
-                                              color: Colors.white70,
+                                              color: Color.fromRGBO(
+                                                  205, 205, 205, 1),
                                             ),
                                           ),
                                           Icon(Icons.star,
@@ -85,7 +89,8 @@ class ProductPage extends StatelessWidget {
                                             ' (458)   ',
                                             style: GoogleFonts.inter(
                                               fontSize: 16,
-                                              color: Colors.white70,
+                                              color: Color.fromRGBO(
+                                                  205, 205, 205, 1),
                                             ),
                                           ),
                                           Image.asset(
@@ -104,7 +109,7 @@ class ProductPage extends StatelessWidget {
                                     ),
                                     child: DropdownButton<int>(
                                       value: 1,
-                    
+
                                       items: List.generate(10, (index) {
                                         return DropdownMenuItem<int>(
                                           value: index + 1,
@@ -134,14 +139,14 @@ class ProductPage extends StatelessWidget {
                               ),
                               const SizedBox(height: 8),
                               Text(
-                                'Caffè latte is a milk coffee made with espresso and steamed milk.',
+                                'Caffè latte is a milk coffee that is a made up of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top.',
                                 style: GoogleFonts.inter(
-                                  fontSize: 14,
+                                  fontSize: 10,
                                   color: Colors.white70,
                                 ),
                               ),
                               const SizedBox(height: 16),
-                    
+
                               // Choice of Cup Filling
                               Text(
                                 'Choice of Cup Filling',
@@ -154,97 +159,81 @@ class ProductPage extends StatelessWidget {
                               Transform.scale(
                                 scale: 0.85,
                                 alignment: Alignment.centerLeft,
-                                child: Row(
+                                child: const Row(
                                   children: [
                                     SizedBox(width: 8),
                                     ChoiceChip(
                                       label: Text(
                                         'Full',
-                                        style: TextStyle(
-                                          color: true
-                                              ? Colors.white
-                                              : Colors
-                                                  .black, // Change text color based on selection
-                                        ),
+                                        style: TextStyle(color: Colors.white),
                                       ),
                                       selected:
                                           true, // Change this to reflect the actual selected state
                                       selectedColor: Colors.green,
                                       showCheckmark: false,
                                       labelStyle: TextStyle(
-                                        color: true
-                                            ? Colors.white
-                                            : Colors
-                                                .black, // Change text color based on selection
+                                        color: Colors
+                                            .white, // Change text color based on selection
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                     SizedBox(width: 8),
                                     ChoiceChip(
+                                      disabledColor: Colors.white,
                                       label: Text(
                                         '1/2 Full',
                                         style: TextStyle(
-                                          color: false
-                                              ? Colors.white
-                                              : Colors
-                                                  .black, // Change text color based on selection
+                                          color: Colors
+                                              .black, // Change text color based on selection
                                         ),
                                       ),
                                       selected:
                                           false, // Change this to reflect the actual selected state
                                       labelStyle: TextStyle(
-                                        color: false
-                                            ? Colors.white
-                                            : Colors
-                                                .black, // Change text color based on selection
+                                        color: Colors
+                                            .black, // Change text color based on selection
                                       ),
                                     ),
                                     SizedBox(width: 8),
                                     ChoiceChip(
+                                      disabledColor: Colors.white,
                                       label: Text(
                                         '3/4 Full',
                                         style: TextStyle(
-                                          color: false
-                                              ? Colors.white
-                                              : Colors
-                                                  .black, // Change text color based on selection
+                                          color: Colors
+                                              .black, // Change text color based on selection
                                         ),
                                       ),
                                       selected:
                                           false, // Change this to reflect the actual selected state
                                       labelStyle: TextStyle(
-                                        color: false
-                                            ? Colors.white
-                                            : Colors
-                                                .black, // Change text color based on selection
+                                        color: Colors
+                                            .black, // Change text color based on selection
                                       ),
                                     ),
                                     SizedBox(width: 8),
                                     ChoiceChip(
+                                      disabledColor: Colors.white,
                                       label: Text(
                                         '1/4 Full',
                                         style: TextStyle(
-                                          color: false
-                                              ? Colors.white
-                                              : Colors
-                                                  .black, // Change text color based on selection
+                                          color: Colors
+                                              .black, // Change text color based on selection
                                         ),
                                       ),
                                       selected:
                                           false, // Change this to reflect the actual selected state
                                       labelStyle: TextStyle(
-                                        color: false
-                                            ? Colors.white
-                                            : Colors
-                                                .black, // Change text color based on selection
+                                        color: Colors
+                                            .black, // Change text color based on selection
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
-                    
+
                               const SizedBox(height: 16),
-                    
+
                               // Choice of Milk
                               Text(
                                 'Choice of Milk',
@@ -304,9 +293,9 @@ class ProductPage extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                    
+
                               const SizedBox(height: 16),
-                    
+
                               // Choice of Sugar
                               Text(
                                 'Choice of Sugar',
@@ -347,7 +336,7 @@ class ProductPage extends StatelessWidget {
                                 ],
                               ),
                               const SizedBox(height: 16),
-                    
+
                               // Priority and Submit Button Row
                               SizedBox(
                                 height: deviceHeight * 0.11,
@@ -369,7 +358,8 @@ class ProductPage extends StatelessWidget {
                                               // Handle checkbox change
                                             },
                                             activeColor: Colors.white,
-                                            side: BorderSide(color: Colors.white),
+                                            side:
+                                                BorderSide(color: Colors.white),
                                           ),
                                           const SizedBox(width: 4),
                                           Text(
@@ -401,8 +391,9 @@ class ProductPage extends StatelessWidget {
                                               vertical: 12,
                                             ),
                                             shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(
-                                                  deviceHeight * 0.01),
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      deviceHeight * 0.01),
                                             ),
                                           ),
                                           child: FittedBox(

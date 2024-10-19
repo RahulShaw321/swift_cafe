@@ -3,7 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 class LoginButton extends StatelessWidget {
   final deviceHeight;
-  const LoginButton({super.key, this.deviceHeight});
+  final onPressed;
+  const LoginButton({super.key, this.deviceHeight, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +24,10 @@ class LoginButton extends StatelessWidget {
             spreadRadius: -2,
             offset: const Offset(2, 2),
           ),
-          
         ],
       ),
       child: ElevatedButton(
-        onPressed: () => print("Login Pressed"),
+        onPressed:onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor:
               Colors.transparent, // Transparent to show the gradient

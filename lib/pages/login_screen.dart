@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:swift_cafe_app/pages/home_screen.dart';
 import 'package:swift_cafe_app/widgets/custom_text_field.dart';
 import 'package:swift_cafe_app/widgets/glassmorphism.dart';
 import 'package:swift_cafe_app/widgets/login_button.dart';
@@ -136,8 +138,13 @@ class LoginScreen extends StatelessWidget {
                               const SizedBox(height: 20),
                               // Login Button
                               LoginButton(
-                                deviceHeight: deviceHeight,
-                              ),
+                                  deviceHeight: deviceHeight,
+                                  onPressed: () {
+                                    
+                                    // Navigate to HomeScreen
+                                  context.go('/home');
+                                    
+                                  }),
                               const SizedBox(height: 20),
                               // Signup Button
                               SignupButton(

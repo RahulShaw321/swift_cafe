@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -30,11 +31,13 @@ class CustomSwitch extends StatelessWidget {
             child: Switch(
               value: isSelected,
               onChanged: (bool) {},
-              activeColor: Colors.green, // Thumb color when ON
               
-              activeTrackColor: Colors.grey, // Track color when ON
+              
+              activeColor: Colors.white, // Thumb color when ON
+              
+              activeTrackColor: Colors.green, // Track color when ON
               inactiveThumbColor: Colors.white, // Thumb color when OFF
-              inactiveTrackColor: Colors.grey.shade400, // Track color when OFF
+              inactiveTrackColor: Colors.grey, // Track color when OFF
             ),
           ),
           SizedBox(width: deviceWidth * 0.015,),
