@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -51,27 +50,27 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
 
-                 SizedBox(
-                    height: deviceHeight * 0.87,
-                    width: deviceWidth * 0.85,
-                    child: Card(
-                      elevation: 4,
-                      color: Colors.transparent,
-                      
-                      
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(color: Colors.white.withOpacity(0.2)),
-                        borderRadius: BorderRadius.circular(
-                            deviceHeight * 0.015), // Smooth, rounded corners
-                      ),
-                      child: Glassmorphism(
-                        deviceHeight: deviceHeight,
-                        widget: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: deviceHeight * 0.03,
-                            vertical: deviceHeight * 0.035,
-                          ),
-                          child: Column(
+                SizedBox(
+                  height: deviceHeight * 0.87,
+                  width: deviceWidth * 0.85,
+                  child: Card(
+                    elevation: 4,
+                    color: Colors.transparent,
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(color: Colors.white.withOpacity(0.2)),
+                      borderRadius: BorderRadius.circular(
+                          deviceHeight * 0.015), // Smooth, rounded corners
+                    ),
+                    child: Glassmorphism(
+                      roundedEdges: deviceHeight * 0.015,
+                      widget:  NoisyBackground(
+                          deviceHeight: deviceHeight,
+                          ForegroundWidget:Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: deviceHeight * 0.03,
+                          vertical: deviceHeight * 0.035,
+                        ),
+                        child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               // Logo image
@@ -142,7 +141,7 @@ class LoginScreen extends StatelessWidget {
                               SignupButton(
                                 deviceHeight: deviceHeight,
                               ),
-                        
+                          
                               const SizedBox(height: 15),
                               // Privacy Policy Text
                               GestureDetector(
@@ -161,7 +160,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                
+                ),
               ],
             ),
           ),

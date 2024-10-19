@@ -13,15 +13,14 @@ class NoisyBackground extends StatelessWidget {
       children: [
         Positioned.fill(
           child: Opacity(
-            opacity: 0.1, // Subtle opacity for the noise texture
+            opacity: 0.2, // Subtle opacity for the noise texture
             child: ClipRRect(
               borderRadius: BorderRadius.circular(
                   deviceHeight * 0.01), // Consistent rounded corners
               child: Image.asset(
                 "assets/images/noise.png", // Noise texture
                 
-                fit: BoxFit
-                    .cover, // Ensure the texture covers the entire container
+                fit: BoxFit.cover, // Ensure the texture covers the entire container
               ),
             ),
           ),

@@ -8,7 +8,7 @@ class CustomSearchBar extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white, // White background
-        borderRadius: BorderRadius.circular(12), // Slightly rounded corners
+        borderRadius: BorderRadius.circular(5), // Slightly rounded corners
         border: Border.all(color: Colors.grey.shade300), // Light grey border
       ),
       child: Row(
@@ -26,8 +26,8 @@ class CustomSearchBar extends StatelessWidget {
                 hintStyle: TextStyle(
                     color: Colors.black.withOpacity(0.3), fontSize: 15),
                 border: InputBorder.none, // No border on TextField
-                contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10), // Vertical padding
+                contentPadding: const EdgeInsets.symmetric(
+                    vertical: 10), // Vertical padding
               ),
             ),
           ),

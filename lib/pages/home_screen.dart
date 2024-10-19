@@ -129,10 +129,27 @@ class HomeScreen extends StatelessWidget {
 
                         SizedBox(height: deviceHeight * 0.02),
                         Container(
-                          
                           width: double
                               .infinity, // Makes it fit the full width of the device
-                    
+                          decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(
+                                0.1), // Background color with opacity
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.5),
+                                offset: const Offset(
+                                    0, 0), // Slight shadow for depth
+                                blurRadius: 5,
+                                spreadRadius: 1,
+                              ),
+                              BoxShadow(
+                                color: Colors.white.withOpacity(0.1),
+                                offset: const Offset(
+                                    0, 0), // Light highlight shadow
+                                blurRadius: 5,
+                              ),
+                            ],
+                          ),
                           child: Padding(
                             padding: EdgeInsets.all(deviceHeight * 0.02),
                             child: Column(
@@ -152,7 +169,6 @@ class HomeScreen extends StatelessWidget {
                                 // Grid of Beverages
                                 SizedBox(
                                   height: deviceHeight * 0.3,
-                                
                                   child: GridView.builder(
                                     scrollDirection: Axis.horizontal,
                                     itemCount: 3,
@@ -162,7 +178,7 @@ class HomeScreen extends StatelessWidget {
                                       childAspectRatio: 1.1,
                                     ),
                                     itemBuilder: (context, index) {
-                                      return GridTileCard();
+                                      return const GridTileCard();
                                     },
                                   ),
                                 ),
