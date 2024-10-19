@@ -69,6 +69,11 @@ flutter:
     - assets/images/latte.png
     - assets/images/americano.png
     - assets/images/cappuccino.png
+    - assets/images/cappuccino.png
+    - assets/images/veg.png
+    - assets/images/error.png
+
+  
  
   
 

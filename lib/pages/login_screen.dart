@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swift_cafe_app/widgets/custom_text_field.dart';
@@ -63,14 +62,14 @@ class LoginScreen extends StatelessWidget {
                     ),
                     child: Glassmorphism(
                       roundedEdges: deviceHeight * 0.015,
-                      widget:  NoisyBackground(
-                          deviceHeight: deviceHeight,
-                          ForegroundWidget:Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: deviceHeight * 0.03,
-                          vertical: deviceHeight * 0.035,
-                        ),
-                        child: Column(
+                      widget: NoisyBackground(
+                        deviceHeight: deviceHeight,
+                        ForegroundWidget: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: deviceHeight * 0.03,
+                            vertical: deviceHeight * 0.035,
+                          ),
+                          child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               // Logo image
@@ -110,15 +109,18 @@ class LoginScreen extends StatelessWidget {
                                             171, 171, 171, 0.95),
                                         shadows: [
                                           Shadow(
-                                            color: Colors.white.withOpacity(0.6),
+                                            color:
+                                                Colors.white.withOpacity(0.6),
                                             blurRadius: 20,
                                           ),
                                           Shadow(
-                                            color: Colors.white.withOpacity(0.4),
+                                            color:
+                                                Colors.white.withOpacity(0.4),
                                             blurRadius: 30,
                                           ),
                                           Shadow(
-                                            color: Colors.white.withOpacity(0.2),
+                                            color:
+                                                Colors.white.withOpacity(0.2),
                                             blurRadius: 40,
                                           ),
                                         ],
@@ -141,7 +143,7 @@ class LoginScreen extends StatelessWidget {
                               SignupButton(
                                 deviceHeight: deviceHeight,
                               ),
-                          
+
                               const SizedBox(height: 15),
                               // Privacy Policy Text
                               GestureDetector(
