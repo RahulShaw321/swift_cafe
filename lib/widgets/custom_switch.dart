@@ -31,6 +31,7 @@ class CustomSwitch extends StatelessWidget {
               value: isSelected,
               onChanged: (bool) {},
               activeColor: Colors.green, // Thumb color when ON
+              
               activeTrackColor: Colors.grey, // Track color when ON
               inactiveThumbColor: Colors.white, // Thumb color when OFF
               inactiveTrackColor: Colors.grey.shade400, // Track color when OFF
