@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swift_cafe_app/widgets/glassmorphism.dart';
-import 'package:swift_cafe_app/widgets/noisy_background.dart';
+
 
 class ListViewCard extends StatelessWidget {
   final double deviceHeight;

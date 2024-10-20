@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swift_cafe_app/coffees_list.dart';
-import 'package:swift_cafe_app/main.dart';
+
 import 'package:swift_cafe_app/widgets/custom_search_bar.dart';
 import 'package:swift_cafe_app/widgets/grid_tile_card.dart';
 import 'package:swift_cafe_app/widgets/list_view_card.dart';
@@ -238,14 +238,13 @@ class HomeScreen extends StatelessWidget {
                               Column(
                                 children: coffeeItems.map((coffee) {
                                   return ListViewCard(
-                                    imgDirectory: coffee['image'],
-                                    coffeeName: coffee['name'],
-                                    description: coffee['details'],
-                                    deviceHeight: deviceHeight,
-                                    onPressed:(){
-                                      context.go('/product');
-                                    }
-                                  );
+                                      imgDirectory: coffee['image'],
+                                      coffeeName: coffee['name'],
+                                      description: coffee['details'],
+                                      deviceHeight: deviceHeight,
+                                      onPressed: () {
+                                        context.go('/product');
+                                      });
                                 }).toList(),
                               )
                             ],
