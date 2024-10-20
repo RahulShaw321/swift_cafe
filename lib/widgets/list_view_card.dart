@@ -73,11 +73,13 @@ class ListViewCard extends StatelessWidget {
                             ],
                           ),
                           SizedBox(height: deviceHeight * 0.005),
-                          Text(
-                            description, // Use the description parameter
-                            style: GoogleFonts.inter(
-                              fontSize: deviceHeight * 0.015,
-                              color: Colors.white70,
+                          Expanded(
+                            child: Text(
+                              description, // Use the description parameter
+                              style: GoogleFonts.inter(
+                                fontSize: deviceHeight * 0.014,
+                                color: Colors.white70,
+                              ),
                             ),
                           ),
                         ],
@@ -90,8 +92,8 @@ class ListViewCard extends StatelessWidget {
                       children: [
                         // Image of the beverage
                         SizedBox(
-                          height: double.infinity,
-                          width: deviceHeight * 0.16,
+                          height: deviceHeight * 0.17,
+                          width: deviceHeight * 0.17,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(deviceHeight * 0.01),
                             child: Image.asset(
