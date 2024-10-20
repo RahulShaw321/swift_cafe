@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swift_cafe_app/widgets/custom_switch.dart';
@@ -50,92 +52,141 @@ class ProductPage extends StatelessWidget {
                         height: deviceHeight * 0.6,
                         width: deviceWidth,
                         padding:
-                            EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            EdgeInsets.symmetric(horizontal: 18, vertical: 8),
                         child: SingleChildScrollView(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               // Title and Rating Row
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Lattè',
-                                        style: GoogleFonts.inter(
-                                          fontSize: 24,
-                                          color:
-                                              Color.fromRGBO(205, 205, 205, 1),
-                                          fontWeight: FontWeight.bold,
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Lattè',
+                                          style: GoogleFonts.inter(
+                                            fontSize: 18,
+                                            color: Color.fromRGBO(
+                                                205, 205, 205, 1),
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
-                                      ),
-                                      Row(
-                                        children: [
-                                          Text(
-                                            '4.9  ',
-                                            style: GoogleFonts.inter(
-                                              fontSize: 16,
-                                              color: Color.fromRGBO(
-                                                  205, 205, 205, 1),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              '4.9  ',
+                                              style: GoogleFonts.inter(
+                                                fontSize: 12,
+                                                color: Color.fromRGBO(
+                                                    205, 205, 205, 1),
+                                              ),
                                             ),
-                                          ),
-                                          Icon(Icons.star,
-                                              color: Colors.amber, size: 20),
-                                          Text(
-                                            ' (458)   ',
-                                            style: GoogleFonts.inter(
-                                              fontSize: 16,
-                                              color: Color.fromRGBO(
-                                                  205, 205, 205, 1),
+                                            Icon(Icons.star,
+                                                color: Colors.amber, size: 12),
+                                            Text(
+                                              ' (458)   ',
+                                              style: GoogleFonts.inter(
+                                                fontSize: 12,
+                                                color: Color.fromRGBO(
+                                                    205, 205, 205, 1),
+                                              ),
                                             ),
-                                          ),
-                                          Image.asset(
-                                            'assets/images/veg.png',
-                                            height: deviceHeight * 0.023,
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color: Colors
-                                          .white, // Background color of the dropdown
-                                      borderRadius: BorderRadius.circular(5),
+                                            Image.asset(
+                                              'assets/images/veg.png',
+                                              height: deviceHeight * 0.02,
+                                            ),
+                                          ],
+                                        ),
+                                      ],
                                     ),
-                                    child: DropdownButton<int>(
-                                      value: 1,
-
-                                      items: List.generate(10, (index) {
-                                        return DropdownMenuItem<int>(
-                                          value: index + 1,
-                                          child: Text(
-                                            '${index + 1} ',
-                                            style: GoogleFonts.inter(
-                                              color: Colors
-                                                  .black, // Text color of dropdown items
-                                            ),
-                                          ),
-                                        );
-                                      }),
-                                      onChanged: (value) {},
-                                      dropdownColor: Colors.grey
-                                          .shade900, // Dropdown background color
-                                      iconEnabledColor: Colors.grey,
-                                      icon: Icon(
-                                        Icons.arrow_downward,
-                                      ), // Dropdown icon color
-                                      style: GoogleFonts.inter(
+                                    Container(
+                                      height: deviceHeight * 0.03,
+                                      width: deviceWidth * 0.13,
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
                                         color: Colors
-                                            .white, // Text color of the selected item
-                                      ), // Selected item text color
+                                            .white, // Background color of the dropdown
+                                        borderRadius: BorderRadius.circular(5),
+                                      ),
+                                      child: DropdownButton<int>(
+                                        value: 1,
+                                        isExpanded:
+                                            true, // Ensures the full width is used
+                                        items: List.generate(10, (index) {
+                                          return DropdownMenuItem<int>(
+                                            value: index + 1,
+                                            child: Text(
+                                              '${index + 1}',
+                                              style: GoogleFonts.inter(
+                                                fontSize: 11,
+                                                color: Colors
+                                                    .grey, // Text color of dropdown items
+                                              ),
+                                            ),
+                                          );
+                                        }),
+                                        onChanged: (value) {},
+
+                                        // Custom Row for the selected item and arrow
+                                        selectedItemBuilder: (context) {
+                                          return List.generate(10, (index) {
+                                            return Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                SizedBox(
+                                                  width: 5,
+                                                ),
+                                                Text(
+                                                  '${index + 1}',
+                                                  style: GoogleFonts.inter(
+                                                    fontSize: 11,
+                                                    color: Colors
+                                                        .grey, // Selected item text color
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: deviceWidth * 0.02,
+                                                ),
+                                                const VerticalDivider(
+                                                  thickness: 1,
+                                                  width: 10,
+                                                  color: Colors
+                                                      .grey, // Divider color
+                                                ),
+                                                Transform.rotate(
+                                                  angle: pi / 2.0,
+                                                  child: Icon(
+                                                    Icons.navigate_next,
+                                                    size: deviceHeight * 0.026,
+                                                    color: Colors
+                                                        .grey, // Icon color
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 3,
+                                                ),
+                                              ],
+                                            );
+                                          });
+                                        },
+                                        icon: SizedBox(),
+                                        underline: SizedBox(),
+                                        dropdownColor: Colors
+                                            .white, // Dropdown background color
+                                        iconEnabledColor: Colors.grey,
+                                        iconSize: deviceHeight *
+                                            0.025, // Dropdown icon size
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                               const SizedBox(height: 8),
                               Text(

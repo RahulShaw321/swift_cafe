@@ -1,4 +1,3 @@
-// main.dart
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:swift_cafe_app/pages/login_screen.dart';
@@ -6,7 +5,7 @@ import 'package:swift_cafe_app/pages/home_screen.dart';
 import 'package:swift_cafe_app/pages/product_page.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -18,15 +17,15 @@ class MyApp extends StatelessWidget {
     routes: [
       GoRoute(
         path: '/login',
-        builder: (context, state) =>  const LoginScreen(),
+        builder: (context, state) => const LoginScreen(),
       ),
       GoRoute(
         path: '/home',
-        builder: (context, state) =>  const HomeScreen(),
+        builder: (context, state) => const HomeScreen(),
       ),
       GoRoute(
         path: '/product',
-        builder: (context, state) =>  const ProductPage(),
+        builder: (context, state) => const ProductPage(),
       ),
     ],
   );

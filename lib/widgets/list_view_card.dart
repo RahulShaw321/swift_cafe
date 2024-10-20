@@ -34,9 +34,7 @@ class ListViewCard extends StatelessWidget {
           ),
           child: Glassmorphism(
             roundedEdges: deviceHeight * 0.02,
-            widget: NoisyBackground(
-              deviceHeight: deviceHeight,
-              ForegroundWidget: Container(
+            widget:  Container(
                 padding:
                     EdgeInsets.all(deviceHeight * 0.02), // Padding inside the card
                 child: Row(
@@ -144,7 +142,7 @@ class ListViewCard extends StatelessWidget {
             ),
           ),
         ),
-      ),
+      
     );
   }
 }
