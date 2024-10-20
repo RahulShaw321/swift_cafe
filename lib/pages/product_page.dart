@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:swift_cafe_app/pages/login_screen.dart';
+
 import 'package:swift_cafe_app/widgets/custom_switch.dart';
 
 import 'package:swift_cafe_app/widgets/glassmorphism.dart';
@@ -19,7 +19,7 @@ class ProductPage extends StatelessWidget {
 
     return WillPopScope(
       onWillPop: ()async{
-        context.pop();
+        context.pop(context);
 
         return true;
         
